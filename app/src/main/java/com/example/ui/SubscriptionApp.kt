@@ -130,22 +130,6 @@ fun SubscriptionApp(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
-                        // Avatar: Circle, 40dp, bg primaryContainer, text onPrimaryContainer
-                        Box(
-                            modifier = Modifier
-                                .size(40.dp)
-                                .background(MaterialTheme.colorScheme.primaryContainer, CircleShape),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                text = "S",
-                                style = MaterialTheme.typography.titleMedium.copy(
-                                    fontWeight = FontWeight.Bold,
-                                    fontSize = 20.sp
-                                ),
-                                color = MaterialTheme.colorScheme.onPrimaryContainer
-                            )
-                        }
                         
                         Text(
                             text = "Mis suscripciones",
@@ -685,24 +669,31 @@ fun SubscriptionApp(
                             border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.1f))
                         ) {
                             Column(
-                                modifier = Modifier.padding(16.dp),
+                                modifier = Modifier
+                                    .padding(16.dp)
+                                    .fillMaxWidth(), // 👈 Añade esto
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
                                 Text(
                                     text = "Gestor de Suscripciones",
-                                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold)
+                                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                                    textAlign = TextAlign.Center,      // 👈 Añade esto
+                                    modifier = Modifier.fillMaxWidth() // 👈 Añade esto
                                 )
                                 Text(
-                                    text = "Versión 1.2.0 • Tema Sleek Interface",
+                                    text = "Versión 1.0.0",
                                     style = MaterialTheme.typography.bodySmall,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+                                    textAlign = TextAlign.Center,      // 👈 Añade esto
+                                    modifier = Modifier.fillMaxWidth() // 👈 Añade esto
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
                                 Text(
                                     text = "Desarrollado por Ivan Naranjo.",
                                     style = MaterialTheme.typography.bodySmall,
                                     textAlign = TextAlign.Center,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+                                    modifier = Modifier.fillMaxWidth() // 👈 Añade esto
                                 )
                             }
                         }
